@@ -1,0 +1,59 @@
+
+/**
+ * @author Aqib Javed 
+
+ * @description The assignment was to create a method in which the number of times the uppercase and 
+                lowercase  of the letter 'E' is inputted in a sentence gets
+                outputted in a dialog box. 
+ */
+    /** @param sentence = Stores the sentence entered by the user
+     * @param break = To stop the program
+     * @param uppercase = A variable for uppercase 'E'
+     * @param lowercase = A variable for lowercase 'e'
+     * @param charAt is used to check every letter of the inputed string
+     */
+import javax.swing.*;
+
+public class Project0 {
+
+	public static void main(String[] args) {
+
+		// while (true) for infinite loops until a break is applied with certain condition.
+		while (true) {
+
+			// variable to hold the sentence the student inputs
+			 String sentence;
+
+			// This line of code allows the program to print out a Dialog to input your sentence.
+			
+			sentence = JOptionPane.showInputDialog("Please enter a sentence.");
+
+			
+			 //If user enters 'Stop' in either uppercase or lowercase , then the system stops from
+			 //going to next step and exits out of the loop.
+		    if (sentence.equalsIgnoreCase("stop"))
+				break;
+
+			int x = sentence.length();
+
+			// x and y declared as variable to be used as increments in 'for' loop below.
+			int lowercase = 0;
+			int uppercase = 0;
+
+			for (int i = 0; i < x; i++) {
+
+				if (sentence.charAt(i) == 'e') {
+					lowercase++; // if a lower case 'e' is found, then continuous increment by 1 until loop end condition meets
+				}
+				if (sentence.charAt(i) == 'E') {
+					uppercase++; // if an upper case 'E' is found, then continuous increment by 1 until loop end condition meets
+				}
+			}
+            
+			// Output in a dialog box the number of times the uppercase 'E' and lowercase 'e' prints out
+			JOptionPane.showMessageDialog(null,
+					"Number of lower case e's:" + lowercase + "\n" + "Number of upper case E's:" + uppercase);
+
+		}
+	}
+}
